@@ -4,32 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
     <title>Weather Application</title>
+
+    <!-- Vendor CSS files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+    <!-- User Stylesheets -->
     <link rel="stylesheet" href="app.css">
+
 </head>
-<body>
+
+<body class="bgcolor">
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Weather Forecasting</a>
+            <a href="#/" class="brand-logo center">Weather Forecasting</a>
         </div>
     </nav>
     <div class="container">
         <div ng-view></div>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
-    <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
-<script src="../bower_components/chart.js/dist/Chart.min.js"></script>
-<script src="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-<script src="../jsonQ.min.js"></script>
 
+<!-- Vendor JavaScript files -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/angular.min.js"></script>
+<script src="../js/angular-route.min.js"></script>
+<script src="../js/Chart.min.js"></script>
+<script src="../js/angular-chart.min.js"></script>
+<script src="../js/materialize.min.js"></script>
+<script src="../js/jsonQ.min.js"></script>
+<script src="../js/angular-spinkit.js"></script>
+
+
+<!-- User JavaScript files -->
 <script src="app.js"></script>
 <script src="controllers/weather.controller.js"></script>
 <script src="controllers/forecast.controller.js"></script>
 <script src="services/city.service.js"></script>
-<script src="services/weatherInfo.service.js"></script>
+
 </body>
 </html>
