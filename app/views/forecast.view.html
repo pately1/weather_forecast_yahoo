@@ -1,28 +1,38 @@
 <p>
     <a class="waves-effect waves-light btn" href="#/" ng-click="back()">Back to Search</a>
 </p>
-<h5>Forecast for {{result.location.city}}, {{result.location.region}}, {{result.location.country}}</h5>
-<hr/>
-<div class="row">
-    <div class="col s12 m6">
-        <div class="card-panel teal">
-            <div class="white-text">Current Weather: {{currentWeather}}</div>
-            <div class="white-text">Current Temperature: {{currentTemp}} F</div>
-            <div class="white-text">Today's High: {{todayHigh}} F</div>
-            <div class="white-text">Today's Low: {{todayLow}} F</div>
-            <div ng-if="isToggle">
-                <div class="white-text">Wind Speed: {{wind}} </div>
-                <div class="white-text">Humidity: {{humidity}} </div>
-                <div class="white-text">Pressure: {{pressure}} </div>
-                <div class="white-text">Sunrise: {{sunrise}} </div>
-                <div class="white-text">Sunset: {{sunset}} </div>
+
+<!-- Loading bar until Data is fetched from API -->
+<div ng-if="flag">
+    <chasing-dots-spinner></chasing-dots-spinner>
+</div>
+
+<!-- Weather Information -->
+<div ng-if="!flag">
+    <h5>Forecast for {{result.location.city}}, {{result.location.region}}, {{result.location.country}}</h5>
+    <hr/>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card-panel teal">
+                <div class="white-text">Current Weather: {{currentWeather}}</div>
+                <div class="white-text">Current Temperature: {{currentTemp}} &#8457;</div>
+                <div class="white-text">Today's High: {{todayHigh}} &#8457;</div>
+                <div class="white-text">Today's Low: {{todayLow}} &#8457;</div>
+                <div ng-if="isToggle">
+                    <div class="white-text">Wind Speed: {{wind}} km/h </div>
+                    <div class="white-text">Humidity: {{humidity}}% </div>
+                    <div class="white-text">Pressure: {{pressure}} mBar </div>
+                    <div class="white-text">Sunrise: {{sunrise}} </div>
+                    <div class="white-text">Sunset: {{sunset}} </div>
+                </div>
+                <button class="btn-floating waves-effect waves-light red lighten-1" ng-click="toggle()" ng-if="isToggle == false">+</button>
+                <button class="btn-floating waves-effect waves-light red lighten-1" ng-click="toggle()" ng-if="isToggle == true">-</button>
             </div>
-            <button class="btn-floating waves-effect waves-light red lighten-1" ng-click="toggle()" ng-if="isToggle == false">+</button>
-            <button class="btn-floating waves-effect waves-light red lighten-1" ng-click="toggle()" ng-if="isToggle == true">-</button>
         </div>
     </div>
-</div>
-<canvas width="200" height="60" id="line" class="chart chart-line"
-        chart-data="high_low" chart-labels="days" chart-series="series" options="chart_options">
-</canvas>
 
+    <!-- Graph -->
+    <canvas width="200" height="60" id="line" class="chart chart-line"
+            chart-data="high_low" chart-labels="days" chart-series="series" options="chart_options">
+    </canvas>
+</div>
