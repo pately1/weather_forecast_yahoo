@@ -7,6 +7,7 @@
     angular
         .module('WeatherApp')
         .service('cityService', function () {
+
                 this.text = "New York, NY";
         });
 })();
