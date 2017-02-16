@@ -7,12 +7,14 @@
     </div>
     <div class="row">
         <div class="col s6">
-            <a class="btn waves-effect waves-light full-width" href="#/forecast" name="action" ng-disabled = "flag">Go</a>
+            <a class="btn waves-effect waves-light full-width" id="btn1" href="#/forecast" name="action" ng-disabled = "flag">Go</a>
         </div>
     </div>
 </div>
-<!--<script>-->
-    <!--$(document).ready(function() {-->
-        <!--$('input#zip').characterCounter();-->
-    <!--});-->
-<!--</script>-->
+<script>
+    $("#zip").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#btn1").click();
+        }
+    });
+</script>
