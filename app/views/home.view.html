@@ -1,0 +1,18 @@
+<div class="home-margin">
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="zip" type="text" class="active" data-length="5" ng-model="zip"/>
+            <label for="zip">Enter Zip</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <a class="btn waves-effect waves-light full-width" href="#/forecast" name="action" ng-disabled = "flag">Go</a>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('input#zip').characterCounter();
+    });
+</script>

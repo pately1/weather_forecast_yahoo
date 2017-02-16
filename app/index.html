@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WeatherApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Weather Forecasting</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+<script src="../bower_components/chart.js/dist/Chart.min.js"></script>
+<script src="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<script src="../jsonQ.min.js"></script>
+
+<script src="app.js"></script>
+<script src="controllers/weather.controller.js"></script>
+<script src="controllers/forecast.controller.js"></script>
+<script src="services/city.service.js"></script>
+<script src="services/weatherInfo.service.js"></script>
+</body>
+</html>
