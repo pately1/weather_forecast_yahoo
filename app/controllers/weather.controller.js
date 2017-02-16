@@ -7,15 +7,10 @@
     angular
         .module('WeatherApp')
         .controller('WeatherCtrl', ['$scope', 'cityService', function ($scope, cityService) {
-            $scope.zip = cityService.zip;
-            $scope.$watch('zip', function(){
-                if ($scope.zip.length == 5) {
-                    $scope.flag = false;
-                }
-                else {
-                    $scope.flag = true;
-                }
-                cityService.zip = $scope.zip;
+            $scope.text = cityService.text;
+            $scope.$watch('text', function(){
+                $scope.text.length == 0 ? $scope.flag = true : $scope.flag = false;
+                cityService.text = $scope.text;
             });
 
         }]);

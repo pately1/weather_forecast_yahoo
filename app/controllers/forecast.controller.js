@@ -7,19 +7,19 @@
     angular
         .module('WeatherApp')
         .controller('ForecastCtrl', ['$scope', 'cityService','$http', function ($scope, cityService, $http) {
-            $scope.zip = cityService.zip;
+            $scope.text = cityService.text;
             $scope.isToggle = false;
             $scope.toggle = function () {
               $scope.isToggle = !$scope.isToggle;
             };
 
             $scope.back = function () {
-              cityService.zip = '';
+              cityService.text = '';
             };
 
-            var zip = cityService.zip,
+            var text = cityService.text,
                 baseUrl = 'https://query.yahooapis.com/v1/public/yql?q=',
-                query = 'select * from weather.forecast where woeid in(select woeid from geo.places(1) where text="'+ zip + '")',
+                query = 'select * from weather.forecast where woeid in(select woeid from geo.places(1) where text="'+ text + '")',
                 encodedQuery = encodeURIComponent(query),
                 params = {
                     format: 'json',

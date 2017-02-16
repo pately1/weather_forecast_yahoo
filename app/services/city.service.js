@@ -7,6 +7,6 @@
     angular
         .module('WeatherApp')
         .service('cityService', function () {
-                this.zip = "10038";
+                this.text = "New York, NY";
         });
 })();
