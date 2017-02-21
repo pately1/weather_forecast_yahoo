@@ -22,7 +22,9 @@
                     params: params
                 }).then(function (response) {
                     return $q.resolve(response.data);
-                });
+                }, function (error) {
+                   return $q.reject(error);
+               });
             }
         }]);
 })();
