@@ -6,7 +6,7 @@
 
     angular
         .module('WeatherApp')
-        .controller('WeatherCtrl', ['$scope', 'cityService', function ($scope, cityService) {
+        .controller('WeatherCtrl', ['$scope', 'cityService', '$location', function ($scope, cityService, $location) {
 
             $scope.text = cityService.text;
 
@@ -14,6 +14,9 @@
                 $scope.text.length == 0 ? $scope.flag = true : $scope.flag = false;
                 cityService.text = $scope.text;
             });
+            $scope.go = function () {
+              $location.path('/forecast');
+            };
 
         }]);
 })();
